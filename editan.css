@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+Body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navigasi */
+header {
+    display: flex;
+    background-color: rgb(160, 191, 209);
+    justify-content: space-around;
+    height: 80px;
+    color: black;
+    align-items: center;
+}
+
+header .logo {
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 3px;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+
+header ul li a {
+    color:black;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+header ul li  a:hover {
+    color: antiquewhite;
+}
+
+/* menu home garis 3 */
+.menu-klik {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+
+}
+
+.menu-klik input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left:-5px;
+    top:-3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+
+}
+
+.menu-klik span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: rgb(8, 8, 8);
+    border-radius: 3px;
+    transition: all 0.5s;
+
+}
+
+
+/* menu home garis 3 animatin */
+.menu-klik span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-klik span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-klik input:checked ~ span:nth-child(2) {
+    background-color: antiquewhite;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-klik input:checked ~ span:nth-child(4) {
+    background-color: antiquewhite;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-klik input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform:scale(0);
+}
+
+
+/* Responsive breakout */
+
+/* ukuran tablet */
+@media screen and (max-width: 768px) {
+    header ul {
+        width: 50%;
+    }
+}
+
+
+/* ukuran mobile */
+
+@media screen and (max-width: 576px) {
+    .menu-klik {
+        display: flex;
+    }
+    header ul {
+        position: absolute;
+        right: 0;
+        top:0;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: rgb(188, 204, 228);
+        z-index: -1;
+        transform: translateX(100%);
+
+    }
+
+}
+
+/* home*/
+
+.latar {
+    background-image:url(latar2edit.png);
+    background-size: cover;
+    text-align: center;
+    padding: 200px 0px 200px 0px;
+    color:rgb(240, 238, 238);
+}
+.konten{
+    width: 1170px;
+    margin: 0 auto;
+}
+.latar h1{
+    font-size: 80px;
+
+}
+.latar h2 {
+    font-size: 40px;
+    font-weight: normal;
+}
+span{
+    color: #c59315;
+  }
+
+
+
+.btn-daftar{
+    margin: 30px 0;
+   
+} 
+.btn{
+    padding : 16px 32px;
+    border-radius: 4px;
+    display: inline-block;
+    color:azure;
+    font-size: 20px;
+}
+  
+.mulai {
+    background-color: #3b5998;
+    margin-right: 10px;
+}
+.registrasi {
+    background-color: #55acee;
+   
+} 
+.btn:hover{
+    opacity: 0.8;
+}
+
+/*info*/
+
+.info {
+    margin-top: 100px;
+    height: 500px;
+}
+
+.judul-info {
+    font-size: 28px;
+    border-bottom: 2px solid #dee7ec;
+    margin-bottom: 50px;
+    padding-bottom: 15px;
+}
+
+.tentang {
+    float: left;
+    margin-right: 40px;
+}
+
+.tentang img {
+    width: 400px;
+    height: 300px;
+    float:right;
+}
+.tentang p{
+    font-size: 24px;
+    text-align:left;
+}
+
+.pelayanan {
+    float: left;
+    margin-right: 40px;
+}
+  
+.pelayanan p{
+    font-size: 24px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.gambar {
+    width: 200px;
+    height: 200px;
+}
+
+.contact{
+    padding-top: 400px;
+    height: 600px;
+}
+  
+input, textarea{
+    border: 1px solid #dee7ec;
+    width: 400px;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+  
+.form p{
+    padding-bottom: 10px;
+}
+  
+.submit{
+    font-size: 18px;
+    color: #111112;
+    background-color: #7ab6d6;
+}
+
+footer{
+    background-color: #2f5167;
+    color: #fff;
+    padding: 40px;
+    height: 120px;
+}
+  
+.footer-logo{
+    font-size: 32px;
+    float: left;
+}
+  
+.footer-list{
+    float:right;
+    
+}
+  
+.footer-list li {
+    padding-bottom: 20px;
+    color:#dee7ec;
+}
+
+.scrollUp {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    padding: .3rem;
+    background: rgb(197, 189, 189);
+    border-radius: 0.4rem;
+    z-index: 5;
+    transition: 0.4s;
+  }
+
+  .scrollUp:hover {
+    background-color: grey;
+  }
+
+  .scrollUp_icon {
+    font-size: 1.8rem;
+    color: rgb(24, 22, 22);
+  }
